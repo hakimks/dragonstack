@@ -9,6 +9,15 @@ const baloo = new Dragon({
     nickname: 'baloo'
 });
 
+setTimeout(() => {
+    const goody = new Dragon();
+    console.log('goody', goody);
+    
+}, 3000);
+
+const mimar =  new Dragon();
 console.log('fooey', fooey);
 console.log('baloo', baloo);
+console.log('mimar', mimar);
+
 
