@@ -15,9 +15,18 @@ setTimeout(() => {
     
 }, 3000);
 
+const scoppy = new Dragon({
+    birthdate: new Date(), 
+    nickname: 'scoppy',
+    traits: [{traitType: 'backgroundColor', traitValue: "grey"}]
+});
+
 const mimar =  new Dragon();
+
 console.log('fooey', fooey);
 console.log('baloo', baloo);
 console.log('mimar', mimar);
+console.log('scoppy', scoppy);
+
 
 
