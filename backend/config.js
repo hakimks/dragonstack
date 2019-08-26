@@ -5,7 +5,7 @@ const DAYS = HOURS * 24;
 
 const REFRESH_RATE = 5; //units
 
-module.export = {
+module.exports = {
     SECONDS,
     MINUTES,
     HOURS,
