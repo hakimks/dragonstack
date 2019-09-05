@@ -7,12 +7,10 @@ const  refreshRate = REFRESH_RATE * SECONDS;
 
 
 
-
-
 class Generation {
     constructor(){
         this.expiration = this.calculateExpiration();
-
+        this.generationId = undefined;
         
     }
 
