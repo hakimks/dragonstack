@@ -35,7 +35,7 @@ class Generation {
             throw new Error(`This Generation expired on ${this.expiration}`);
         }
 
-        return new Dragon();
+        return new Dragon({generationId: this.generationId});
     }
 
 }
