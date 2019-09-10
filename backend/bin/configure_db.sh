@@ -6,6 +6,7 @@ createdb -U node_user -h localhost dragonstackdb
 psql -U node_user -h localhost dragonstackdb < ./bin/sql/generation.sql
 psql -U node_user -h localhost dragonstackdb < ./bin/sql/dragon.sql
 psql -U node_user -h localhost dragonstackdb < ./bin/sql/trait.sql
+psql -U node_user -h localhost dragonstackdb < ./bin/sql/dragonTrait.sql
 
 node ./bin/insertTraits.js
 
