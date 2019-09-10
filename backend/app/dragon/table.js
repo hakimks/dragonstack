@@ -19,7 +19,7 @@ class DragonTable{
                     
                     resolve({ dragonId });
                 }
-            )
+            );
         });
     }
 }
