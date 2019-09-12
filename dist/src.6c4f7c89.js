@@ -17707,15 +17707,38 @@ var Generation = function (_Component) {
     _inherits(Generation, _Component);
 
     function Generation() {
+        var _ref;
+
+        var _temp, _this, _ret;
+
         _classCallCheck(this, Generation);
 
-        return _possibleConstructorReturn(this, (Generation.__proto__ || Object.getPrototypeOf(Generation)).apply(this, arguments));
+        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+        }
+
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Generation.__proto__ || Object.getPrototypeOf(Generation)).call.apply(_ref, [this].concat(args))), _this), _this.state = { generation: { generationId: 898, expiration: '2021-09-01' } }, _this.fetchGeneration = function () {
+            fetch('http://localhost:3000/generation').then(function (response) {
+                return console.log("response", response);
+            });
+        }, _temp), _possibleConstructorReturn(_this, _ret);
     }
+    // constructor() {
+    //     this.state = {}
+    // }
+
 
     _createClass(Generation, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            this.fetchGeneration();
+        }
+    }, {
         key: 'render',
         value: function render() {
-            var generation = { generationId: 898, expiration: '2021-09-01' };
+            // const generation = this.state.generation;
+            var generation = this.state.generation;
+
             return _react2.default.createElement(
                 'div',
                 null,
@@ -17793,7 +17816,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '55554' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '49789' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
