@@ -3,3 +3,4 @@ backend/node_modules
 secrets/
 frontend/node_modules
 frontend/dist
+frontend/.cache
