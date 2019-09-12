@@ -15,7 +15,7 @@ class DragonTable{
 
                     const dragonId = response.rows[0].id;
 
-                    console.log('In dragontable file the id is ', dragonId);
+                    // console.log('In dragontable file the id is ', dragonId);
                     
 
                     Promise.all(dragon.traits.map(({traitType, traitValue}) => {
