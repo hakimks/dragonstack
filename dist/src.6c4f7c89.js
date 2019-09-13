@@ -17719,7 +17719,12 @@ var Generation = function (_Component) {
 
         return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Generation.__proto__ || Object.getPrototypeOf(Generation)).call.apply(_ref, [this].concat(args))), _this), _this.state = { generation: { generationId: 898, expiration: '2021-09-01' } }, _this.fetchGeneration = function () {
             fetch('http://localhost:3000/generation').then(function (response) {
-                return console.log("response", response);
+                return response.json();
+            }).then(function (json) {
+                console.log('json', json);
+                _this.setState({ generation: json.generation });
+            }).catch(function (error) {
+                return console.error('error', error);
             });
         }, _temp), _possibleConstructorReturn(_this, _ret);
     }
@@ -17816,7 +17821,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '49789' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '61777' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 

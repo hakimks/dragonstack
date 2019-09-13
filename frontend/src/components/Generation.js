@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 
+const DEFAULT_GENERATION = {generationId: '', expiration : ''};
+
 class Generation extends Component {
     // constructor() {
     //     this.state = {}
     // }
-    state = { generation:{generationId: 898, expiration: '2021-09-01'} };
+    state = { generation:DEFAULT_GENERATION };
 
     componentDidMount() {
         this.fetchGeneration();
@@ -12,8 +14,14 @@ class Generation extends Component {
 
     fetchGeneration = () => {
         fetch('http://localhost:3000/generation')
-        .then(response => console.log("response", response)
-        );
+        .then(response => response.json())
+        .then(json => {
+            console.log('json', json)
+            this.setState({ generation: json.generation});
+        }
+        
+        
+        ).catch(error => console.error('error', error));
     };
 
     render() {
