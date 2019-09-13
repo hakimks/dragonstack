@@ -17703,6 +17703,9 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+var DEFAULT_GENERATION = { generationId: '', expiration: '' };
+var MINIMUM_DELAY = 300;
+
 var Generation = function (_Component) {
     _inherits(Generation, _Component);
 
@@ -17717,7 +17720,7 @@ var Generation = function (_Component) {
             args[_key] = arguments[_key];
         }
 
-        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Generation.__proto__ || Object.getPrototypeOf(Generation)).call.apply(_ref, [this].concat(args))), _this), _this.state = { generation: { generationId: 898, expiration: '2021-09-01' } }, _this.fetchGeneration = function () {
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Generation.__proto__ || Object.getPrototypeOf(Generation)).call.apply(_ref, [this].concat(args))), _this), _this.state = { generation: DEFAULT_GENERATION }, _this.fetchGeneration = function () {
             fetch('http://localhost:3000/generation').then(function (response) {
                 return response.json();
             }).then(function (json) {
@@ -17726,6 +17729,18 @@ var Generation = function (_Component) {
             }).catch(function (error) {
                 return console.error('error', error);
             });
+        }, _this.fetchNextGeneration = function () {
+            _this.fetchGeneration();
+
+            var delay = new Date(_this.state.generation.expiration).getTime() - new Date().getTime();
+
+            if (delay < MINIMUM_DELAY) {
+                delay = MINIMUM_DELAY;
+            }
+
+            setTimeout(function () {
+                return _this.fetchNextGeneration();
+            }, delay);
         }, _temp), _possibleConstructorReturn(_this, _ret);
     }
     // constructor() {
@@ -17736,7 +17751,7 @@ var Generation = function (_Component) {
     _createClass(Generation, [{
         key: 'componentDidMount',
         value: function componentDidMount() {
-            this.fetchGeneration();
+            this.fetchNextGeneration();
         }
     }, {
         key: 'render',
@@ -17821,7 +17836,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '61777' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '60750' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
