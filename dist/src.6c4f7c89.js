@@ -17720,7 +17720,7 @@ var Generation = function (_Component) {
             args[_key] = arguments[_key];
         }
 
-        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Generation.__proto__ || Object.getPrototypeOf(Generation)).call.apply(_ref, [this].concat(args))), _this), _this.state = { generation: DEFAULT_GENERATION }, _this.fetchGeneration = function () {
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Generation.__proto__ || Object.getPrototypeOf(Generation)).call.apply(_ref, [this].concat(args))), _this), _this.timer = null, _this.state = { generation: DEFAULT_GENERATION }, _this.fetchGeneration = function () {
             fetch('http://localhost:3000/generation').then(function (response) {
                 return response.json();
             }).then(function (json) {
@@ -17738,7 +17738,7 @@ var Generation = function (_Component) {
                 delay = MINIMUM_DELAY;
             }
 
-            setTimeout(function () {
+            _this.timer = setTimeout(function () {
                 return _this.fetchNextGeneration();
             }, delay);
         }, _temp), _possibleConstructorReturn(_this, _ret);
@@ -17752,6 +17752,11 @@ var Generation = function (_Component) {
         key: 'componentDidMount',
         value: function componentDidMount() {
             this.fetchNextGeneration();
+        }
+    }, {
+        key: 'componentWillUnmount',
+        value: function componentWillUnmount() {
+            clearTimeout(this.timer);
         }
     }, {
         key: 'render',
@@ -17782,6 +17787,102 @@ var Generation = function (_Component) {
 }(_react.Component);
 
 exports.default = Generation;
+},{"react":"../node_modules/react/index.js"}],"components/dragon.js":[function(require,module,exports) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var DEFAULT_DRAGON = {
+    dragonId: '',
+    generationId: '',
+    nickname: '',
+    birthdate: '',
+    traits: []
+};
+
+var Dragon = function (_Component) {
+    _inherits(Dragon, _Component);
+
+    function Dragon() {
+        var _ref;
+
+        var _temp, _this, _ret;
+
+        _classCallCheck(this, Dragon);
+
+        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+        }
+
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Dragon.__proto__ || Object.getPrototypeOf(Dragon)).call.apply(_ref, [this].concat(args))), _this), _this.state = { dragon: DEFAULT_DRAGON }, _this.fetchDragon = function () {
+            fetch('http://localhost:3000/dragon/new').then(function (Response) {
+                return Response.json();
+            }).then(function (json) {
+                return _this.setState({ dragon: json.dragon });
+            }).catch(function (error) {
+                return console.error('error', error);
+            });
+        }, _temp), _possibleConstructorReturn(_this, _ret);
+    }
+
+    _createClass(Dragon, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            this.fetchDragon();
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var _state$dragon = this.state.dragon,
+                generationId = _state$dragon.generationId,
+                dragonId = _state$dragon.dragonId,
+                traits = _state$dragon.traits;
+
+
+            return _react2.default.createElement(
+                'div',
+                null,
+                _react2.default.createElement(
+                    'span',
+                    null,
+                    'G',
+                    generationId,
+                    '.'
+                ),
+                _react2.default.createElement(
+                    'span',
+                    null,
+                    'I',
+                    dragonId,
+                    '. '
+                ),
+                traits.map(function (trait) {
+                    return trait.traitValue;
+                }).join(', ')
+            );
+        }
+    }]);
+
+    return Dragon;
+}(_react.Component);
+
+exports.default = Dragon;
 },{"react":"../node_modules/react/index.js"}],"index.js":[function(require,module,exports) {
 'use strict';
 
@@ -17795,6 +17896,10 @@ var _Generation = require('./components/Generation');
 
 var _Generation2 = _interopRequireDefault(_Generation);
 
+var _dragon = require('./components/dragon');
+
+var _dragon2 = _interopRequireDefault(_dragon);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _reactDom.render)(_react2.default.createElement(
@@ -17805,9 +17910,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
         null,
         'Dragon Stack from React'
     ),
-    _react2.default.createElement(_Generation2.default, null)
+    _react2.default.createElement(_Generation2.default, null),
+    _react2.default.createElement(_dragon2.default, null)
 ), document.getElementById('root'));
-},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","./components/Generation":"components/Generation.js"}],"../../../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","./components/Generation":"components/Generation.js","./components/dragon":"components/dragon.js"}],"../../../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 
@@ -17836,7 +17942,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '60750' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '62166' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
