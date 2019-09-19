@@ -38465,7 +38465,73 @@ exports.ToggleButtonGroup = _ToggleButtonGroup3.default;
 exports.Tooltip = _Tooltip3.default;
 exports.Well = _Well3.default;
 exports.utils = _utils;
-},{"./Accordion":"../node_modules/react-bootstrap/es/Accordion.js","./Alert":"../node_modules/react-bootstrap/es/Alert.js","./Badge":"../node_modules/react-bootstrap/es/Badge.js","./Breadcrumb":"../node_modules/react-bootstrap/es/Breadcrumb.js","./BreadcrumbItem":"../node_modules/react-bootstrap/es/BreadcrumbItem.js","./Button":"../node_modules/react-bootstrap/es/Button.js","./ButtonGroup":"../node_modules/react-bootstrap/es/ButtonGroup.js","./ButtonToolbar":"../node_modules/react-bootstrap/es/ButtonToolbar.js","./Carousel":"../node_modules/react-bootstrap/es/Carousel.js","./CarouselItem":"../node_modules/react-bootstrap/es/CarouselItem.js","./Checkbox":"../node_modules/react-bootstrap/es/Checkbox.js","./Clearfix":"../node_modules/react-bootstrap/es/Clearfix.js","./CloseButton":"../node_modules/react-bootstrap/es/CloseButton.js","./ControlLabel":"../node_modules/react-bootstrap/es/ControlLabel.js","./Col":"../node_modules/react-bootstrap/es/Col.js","./Collapse":"../node_modules/react-bootstrap/es/Collapse.js","./Dropdown":"../node_modules/react-bootstrap/es/Dropdown.js","./DropdownButton":"../node_modules/react-bootstrap/es/DropdownButton.js","./Fade":"../node_modules/react-bootstrap/es/Fade.js","./Form":"../node_modules/react-bootstrap/es/Form.js","./FormControl":"../node_modules/react-bootstrap/es/FormControl.js","./FormGroup":"../node_modules/react-bootstrap/es/FormGroup.js","./Glyphicon":"../node_modules/react-bootstrap/es/Glyphicon.js","./Grid":"../node_modules/react-bootstrap/es/Grid.js","./HelpBlock":"../node_modules/react-bootstrap/es/HelpBlock.js","./Image":"../node_modules/react-bootstrap/es/Image.js","./InputGroup":"../node_modules/react-bootstrap/es/InputGroup.js","./Jumbotron":"../node_modules/react-bootstrap/es/Jumbotron.js","./Label":"../node_modules/react-bootstrap/es/Label.js","./ListGroup":"../node_modules/react-bootstrap/es/ListGroup.js","./ListGroupItem":"../node_modules/react-bootstrap/es/ListGroupItem.js","./Media":"../node_modules/react-bootstrap/es/Media.js","./MenuItem":"../node_modules/react-bootstrap/es/MenuItem.js","./Modal":"../node_modules/react-bootstrap/es/Modal.js","./ModalBody":"../node_modules/react-bootstrap/es/ModalBody.js","./ModalFooter":"../node_modules/react-bootstrap/es/ModalFooter.js","./ModalHeader":"../node_modules/react-bootstrap/es/ModalHeader.js","./ModalTitle":"../node_modules/react-bootstrap/es/ModalTitle.js","./Nav":"../node_modules/react-bootstrap/es/Nav.js","./Navbar":"../node_modules/react-bootstrap/es/Navbar.js","./NavbarBrand":"../node_modules/react-bootstrap/es/NavbarBrand.js","./NavDropdown":"../node_modules/react-bootstrap/es/NavDropdown.js","./NavItem":"../node_modules/react-bootstrap/es/NavItem.js","./Overlay":"../node_modules/react-bootstrap/es/Overlay.js","./OverlayTrigger":"../node_modules/react-bootstrap/es/OverlayTrigger.js","./PageHeader":"../node_modules/react-bootstrap/es/PageHeader.js","./PageItem":"../node_modules/react-bootstrap/es/PageItem.js","./Pager":"../node_modules/react-bootstrap/es/Pager.js","./Pagination":"../node_modules/react-bootstrap/es/Pagination.js","./Panel":"../node_modules/react-bootstrap/es/Panel.js","./PanelGroup":"../node_modules/react-bootstrap/es/PanelGroup.js","./Popover":"../node_modules/react-bootstrap/es/Popover.js","./ProgressBar":"../node_modules/react-bootstrap/es/ProgressBar.js","./Radio":"../node_modules/react-bootstrap/es/Radio.js","./ResponsiveEmbed":"../node_modules/react-bootstrap/es/ResponsiveEmbed.js","./Row":"../node_modules/react-bootstrap/es/Row.js","./SafeAnchor":"../node_modules/react-bootstrap/es/SafeAnchor.js","./SplitButton":"../node_modules/react-bootstrap/es/SplitButton.js","./Tab":"../node_modules/react-bootstrap/es/Tab.js","./TabContainer":"../node_modules/react-bootstrap/es/TabContainer.js","./TabContent":"../node_modules/react-bootstrap/es/TabContent.js","./Table":"../node_modules/react-bootstrap/es/Table.js","./TabPane":"../node_modules/react-bootstrap/es/TabPane.js","./Tabs":"../node_modules/react-bootstrap/es/Tabs.js","./Thumbnail":"../node_modules/react-bootstrap/es/Thumbnail.js","./ToggleButton":"../node_modules/react-bootstrap/es/ToggleButton.js","./ToggleButtonGroup":"../node_modules/react-bootstrap/es/ToggleButtonGroup.js","./Tooltip":"../node_modules/react-bootstrap/es/Tooltip.js","./Well":"../node_modules/react-bootstrap/es/Well.js","./utils":"../node_modules/react-bootstrap/es/utils/index.js"}],"components/DragonAvator.js":[function(require,module,exports) {
+},{"./Accordion":"../node_modules/react-bootstrap/es/Accordion.js","./Alert":"../node_modules/react-bootstrap/es/Alert.js","./Badge":"../node_modules/react-bootstrap/es/Badge.js","./Breadcrumb":"../node_modules/react-bootstrap/es/Breadcrumb.js","./BreadcrumbItem":"../node_modules/react-bootstrap/es/BreadcrumbItem.js","./Button":"../node_modules/react-bootstrap/es/Button.js","./ButtonGroup":"../node_modules/react-bootstrap/es/ButtonGroup.js","./ButtonToolbar":"../node_modules/react-bootstrap/es/ButtonToolbar.js","./Carousel":"../node_modules/react-bootstrap/es/Carousel.js","./CarouselItem":"../node_modules/react-bootstrap/es/CarouselItem.js","./Checkbox":"../node_modules/react-bootstrap/es/Checkbox.js","./Clearfix":"../node_modules/react-bootstrap/es/Clearfix.js","./CloseButton":"../node_modules/react-bootstrap/es/CloseButton.js","./ControlLabel":"../node_modules/react-bootstrap/es/ControlLabel.js","./Col":"../node_modules/react-bootstrap/es/Col.js","./Collapse":"../node_modules/react-bootstrap/es/Collapse.js","./Dropdown":"../node_modules/react-bootstrap/es/Dropdown.js","./DropdownButton":"../node_modules/react-bootstrap/es/DropdownButton.js","./Fade":"../node_modules/react-bootstrap/es/Fade.js","./Form":"../node_modules/react-bootstrap/es/Form.js","./FormControl":"../node_modules/react-bootstrap/es/FormControl.js","./FormGroup":"../node_modules/react-bootstrap/es/FormGroup.js","./Glyphicon":"../node_modules/react-bootstrap/es/Glyphicon.js","./Grid":"../node_modules/react-bootstrap/es/Grid.js","./HelpBlock":"../node_modules/react-bootstrap/es/HelpBlock.js","./Image":"../node_modules/react-bootstrap/es/Image.js","./InputGroup":"../node_modules/react-bootstrap/es/InputGroup.js","./Jumbotron":"../node_modules/react-bootstrap/es/Jumbotron.js","./Label":"../node_modules/react-bootstrap/es/Label.js","./ListGroup":"../node_modules/react-bootstrap/es/ListGroup.js","./ListGroupItem":"../node_modules/react-bootstrap/es/ListGroupItem.js","./Media":"../node_modules/react-bootstrap/es/Media.js","./MenuItem":"../node_modules/react-bootstrap/es/MenuItem.js","./Modal":"../node_modules/react-bootstrap/es/Modal.js","./ModalBody":"../node_modules/react-bootstrap/es/ModalBody.js","./ModalFooter":"../node_modules/react-bootstrap/es/ModalFooter.js","./ModalHeader":"../node_modules/react-bootstrap/es/ModalHeader.js","./ModalTitle":"../node_modules/react-bootstrap/es/ModalTitle.js","./Nav":"../node_modules/react-bootstrap/es/Nav.js","./Navbar":"../node_modules/react-bootstrap/es/Navbar.js","./NavbarBrand":"../node_modules/react-bootstrap/es/NavbarBrand.js","./NavDropdown":"../node_modules/react-bootstrap/es/NavDropdown.js","./NavItem":"../node_modules/react-bootstrap/es/NavItem.js","./Overlay":"../node_modules/react-bootstrap/es/Overlay.js","./OverlayTrigger":"../node_modules/react-bootstrap/es/OverlayTrigger.js","./PageHeader":"../node_modules/react-bootstrap/es/PageHeader.js","./PageItem":"../node_modules/react-bootstrap/es/PageItem.js","./Pager":"../node_modules/react-bootstrap/es/Pager.js","./Pagination":"../node_modules/react-bootstrap/es/Pagination.js","./Panel":"../node_modules/react-bootstrap/es/Panel.js","./PanelGroup":"../node_modules/react-bootstrap/es/PanelGroup.js","./Popover":"../node_modules/react-bootstrap/es/Popover.js","./ProgressBar":"../node_modules/react-bootstrap/es/ProgressBar.js","./Radio":"../node_modules/react-bootstrap/es/Radio.js","./ResponsiveEmbed":"../node_modules/react-bootstrap/es/ResponsiveEmbed.js","./Row":"../node_modules/react-bootstrap/es/Row.js","./SafeAnchor":"../node_modules/react-bootstrap/es/SafeAnchor.js","./SplitButton":"../node_modules/react-bootstrap/es/SplitButton.js","./Tab":"../node_modules/react-bootstrap/es/Tab.js","./TabContainer":"../node_modules/react-bootstrap/es/TabContainer.js","./TabContent":"../node_modules/react-bootstrap/es/TabContent.js","./Table":"../node_modules/react-bootstrap/es/Table.js","./TabPane":"../node_modules/react-bootstrap/es/TabPane.js","./Tabs":"../node_modules/react-bootstrap/es/Tabs.js","./Thumbnail":"../node_modules/react-bootstrap/es/Thumbnail.js","./ToggleButton":"../node_modules/react-bootstrap/es/ToggleButton.js","./ToggleButtonGroup":"../node_modules/react-bootstrap/es/ToggleButtonGroup.js","./Tooltip":"../node_modules/react-bootstrap/es/Tooltip.js","./Well":"../node_modules/react-bootstrap/es/Well.js","./utils":"../node_modules/react-bootstrap/es/utils/index.js"}],"assets/skinny.png":[function(require,module,exports) {
+module.exports = "/skinny.c622bcf4.png";
+},{}],"assets/patchy.png":[function(require,module,exports) {
+module.exports = "/patchy.b851da48.png";
+},{}],"assets/plain.png":[function(require,module,exports) {
+module.exports = "/plain.d1619a63.png";
+},{}],"assets/slender.png":[function(require,module,exports) {
+module.exports = "/slender.a83c4064.png";
+},{}],"assets/sporty.png":[function(require,module,exports) {
+module.exports = "/sporty.06b91950.png";
+},{}],"assets/spotted.png":[function(require,module,exports) {
+module.exports = "/spotted.9acc5a4d.png";
+},{}],"assets/striped.png":[function(require,module,exports) {
+module.exports = "/striped.56715c71.png";
+},{}],"assets/stocky.png":[function(require,module,exports) {
+module.exports = "/stocky.22781e2f.png";
+},{}],"assets/index.js":[function(require,module,exports) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.striped = exports.spotted = exports.plain = exports.patchy = exports.stocky = exports.sporty = exports.slender = exports.skinny = undefined;
+
+var _skinny = require('./skinny.png');
+
+var _skinny2 = _interopRequireDefault(_skinny);
+
+var _patchy = require('./patchy.png');
+
+var _patchy2 = _interopRequireDefault(_patchy);
+
+var _plain = require('./plain.png');
+
+var _plain2 = _interopRequireDefault(_plain);
+
+var _slender = require('./slender.png');
+
+var _slender2 = _interopRequireDefault(_slender);
+
+var _sporty = require('./sporty.png');
+
+var _sporty2 = _interopRequireDefault(_sporty);
+
+var _spotted = require('./spotted.png');
+
+var _spotted2 = _interopRequireDefault(_spotted);
+
+var _striped = require('./striped.png');
+
+var _striped2 = _interopRequireDefault(_striped);
+
+var _stocky = require('./stocky.png');
+
+var _stocky2 = _interopRequireDefault(_stocky);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.skinny = _skinny2.default;
+exports.slender = _slender2.default;
+exports.sporty = _sporty2.default;
+exports.stocky = _stocky2.default;
+exports.patchy = _patchy2.default;
+exports.plain = _plain2.default;
+exports.spotted = _spotted2.default;
+exports.striped = _striped2.default;
+},{"./skinny.png":"assets/skinny.png","./patchy.png":"assets/patchy.png","./plain.png":"assets/plain.png","./slender.png":"assets/slender.png","./sporty.png":"assets/sporty.png","./spotted.png":"assets/spotted.png","./striped.png":"assets/striped.png","./stocky.png":"assets/stocky.png"}],"components/DragonAvator.js":[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -38478,6 +38544,8 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _assets = require('../assets');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -38485,6 +38553,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var propertyMap = {
+    backgroundColor: {
+        black: '#233638',
+        white: '#cfd8dc',
+        green: '#a5d6a7',
+        blue: '#0277bd'
+    },
+    build: { slender: _assets.slender, stocky: _assets.stocky, sporty: _assets.sporty, skinny: _assets.skinny },
+    pattern: { plain: _assets.plain, striped: _assets.striped, spotted: _assets.spotted, patchy: _assets.patchy },
+    size: { small: 100, medium: 140, large: 180, enormous: 220 }
+};
 
 var DragonAvator = function (_Component) {
     _inherits(DragonAvator, _Component);
@@ -38523,7 +38603,42 @@ var DragonAvator = function (_Component) {
                 ),
                 traits.map(function (trait) {
                     return trait.traitValue;
-                }).join(', ')
+                }).join(', '),
+                this.DragonImage
+            );
+        }
+    }, {
+        key: 'DragonImage',
+        get: function get() {
+            var dragonPropertyMap = {};
+            console.log('dragon', this.props.dragon);
+
+            this.props.dragon.traits.forEach(function (trait) {
+                var traitType = trait.traitType,
+                    traitValue = trait.traitValue;
+
+
+                console.log('traitType', traitType);
+                console.log('traitValue', traitValue);
+
+                dragonPropertyMap[traitType] = propertyMap[traitType][traitValue];
+
+                console.log('dragonpropertyMap', dragonPropertyMap[traitType]);
+            });
+
+            var backgroundColor = dragonPropertyMap.backgroundColor,
+                build = dragonPropertyMap.build,
+                pattern = dragonPropertyMap.pattern,
+                size = dragonPropertyMap.size;
+
+
+            var sizing = { width: size, height: size };
+            return _react2.default.createElement(
+                'div',
+                { className: 'dragon-avatar-image-wrapper' },
+                _react2.default.createElement('div', { className: 'dragon-avatar-image-backgroud', style: { backgroundColor: backgroundColor, width: sizing.width, height: sizing.height } }),
+                _react2.default.createElement('img', { src: pattern, className: 'dragon-avatar-image-pattern', style: sizing }),
+                _react2.default.createElement('img', { src: build, className: 'dragon-avatar-image', style: sizing })
             );
         }
     }]);
@@ -38532,7 +38647,7 @@ var DragonAvator = function (_Component) {
 }(_react.Component);
 
 exports.default = DragonAvator;
-},{"react":"../node_modules/react/index.js"}],"components/dragon.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","../assets":"assets/index.js"}],"components/dragon.js":[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -38745,7 +38860,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '54963' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '54419' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
