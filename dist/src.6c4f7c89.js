@@ -17787,6 +17787,73 @@ var Generation = function (_Component) {
 }(_react.Component);
 
 exports.default = Generation;
+},{"react":"../node_modules/react/index.js"}],"components/DragonAvator.js":[function(require,module,exports) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var DragonAvator = function (_Component) {
+    _inherits(DragonAvator, _Component);
+
+    function DragonAvator() {
+        _classCallCheck(this, DragonAvator);
+
+        return _possibleConstructorReturn(this, (DragonAvator.__proto__ || Object.getPrototypeOf(DragonAvator)).apply(this, arguments));
+    }
+
+    _createClass(DragonAvator, [{
+        key: 'render',
+        value: function render() {
+            var _props$dragon = this.props.dragon,
+                generationId = _props$dragon.generationId,
+                dragonId = _props$dragon.dragonId,
+                traits = _props$dragon.traits;
+
+
+            return _react2.default.createElement(
+                'div',
+                null,
+                _react2.default.createElement(
+                    'span',
+                    null,
+                    'G',
+                    generationId,
+                    '.'
+                ),
+                _react2.default.createElement(
+                    'span',
+                    null,
+                    'I',
+                    dragonId,
+                    '. '
+                ),
+                traits.map(function (trait) {
+                    return trait.traitValue;
+                }).join(', ')
+            );
+        }
+    }]);
+
+    return DragonAvator;
+}(_react.Component);
+
+exports.default = DragonAvator;
 },{"react":"../node_modules/react/index.js"}],"components/dragon.js":[function(require,module,exports) {
 'use strict';
 
@@ -17799,6 +17866,10 @@ var _createClass = function () { function defineProperties(target, props) { for 
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
+
+var _DragonAvator = require('./DragonAvator');
+
+var _DragonAvator2 = _interopRequireDefault(_DragonAvator);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -17849,33 +17920,8 @@ var Dragon = function (_Component) {
     }, {
         key: 'render',
         value: function render() {
-            var _state$dragon = this.state.dragon,
-                generationId = _state$dragon.generationId,
-                dragonId = _state$dragon.dragonId,
-                traits = _state$dragon.traits;
 
-
-            return _react2.default.createElement(
-                'div',
-                null,
-                _react2.default.createElement(
-                    'span',
-                    null,
-                    'G',
-                    generationId,
-                    '.'
-                ),
-                _react2.default.createElement(
-                    'span',
-                    null,
-                    'I',
-                    dragonId,
-                    '. '
-                ),
-                traits.map(function (trait) {
-                    return trait.traitValue;
-                }).join(', ')
-            );
+            return _react2.default.createElement(_DragonAvator2.default, { dragon: this.state.dragon });
         }
     }]);
 
@@ -17883,7 +17929,7 @@ var Dragon = function (_Component) {
 }(_react.Component);
 
 exports.default = Dragon;
-},{"react":"../node_modules/react/index.js"}],"index.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","./DragonAvator":"components/DragonAvator.js"}],"index.js":[function(require,module,exports) {
 'use strict';
 
 var _react = require('react');
@@ -17942,7 +17988,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '62166' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '52298' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
