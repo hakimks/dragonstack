@@ -16,21 +16,12 @@ const propertyMap = {
 class DragonAvator extends Component {
     get DragonImage(){
         const dragonPropertyMap = {};
-        console.log('dragon',this.props.dragon);
         
         this.props.dragon.traits.forEach(trait => {
             const {traitType, traitValue} = trait;
 
-            console.log('traitType', traitType);
-            console.log('traitValue', traitValue);
-            
-            
-
             dragonPropertyMap[traitType] = propertyMap[traitType] [traitValue];
 
-            console.log('dragonpropertyMap',dragonPropertyMap[traitType] );
-            
-            
         });
 
         const {backgroundColor, build, pattern, size} = dragonPropertyMap;

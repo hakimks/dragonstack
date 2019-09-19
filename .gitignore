@@ -6,5 +6,5 @@ frontend/dist
 frontend/.cache
 .cache
 .cache/
-/.cache
+dist/
 dist

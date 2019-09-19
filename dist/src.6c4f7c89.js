@@ -38611,19 +38611,13 @@ var DragonAvator = function (_Component) {
         key: 'DragonImage',
         get: function get() {
             var dragonPropertyMap = {};
-            console.log('dragon', this.props.dragon);
 
             this.props.dragon.traits.forEach(function (trait) {
                 var traitType = trait.traitType,
                     traitValue = trait.traitValue;
 
 
-                console.log('traitType', traitType);
-                console.log('traitValue', traitValue);
-
                 dragonPropertyMap[traitType] = propertyMap[traitType][traitValue];
-
-                console.log('dragonpropertyMap', dragonPropertyMap[traitType]);
             });
 
             var backgroundColor = dragonPropertyMap.backgroundColor,
@@ -38860,7 +38854,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '54419' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '56916' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
