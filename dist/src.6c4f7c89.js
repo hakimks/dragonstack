@@ -39477,12 +39477,10 @@ require('./index.css');
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var DEFAULT_GENERATION = { generationId: '', expiration: '' };
+var GENERATION_ACTION_TYPE = 'GENERATION_ACTION_TYPE';
 
 var generationReducer = function generationReducer(state, action) {
-    console.log('generarionRedider state', state);
-    console.log('generarionReducer action', action);
-
-    if (action.type === 'GENERATION_ACTION_TYPE') {
+    if (action.type === GENERATION_ACTION_TYPE) {
         return { generation: action.generation };
     }
 
@@ -39491,11 +39489,37 @@ var generationReducer = function generationReducer(state, action) {
 
 var store = (0, _redux.createStore)(generationReducer);
 
+console.log('store', store);
+
+store.subscribe(function () {
+    return console.log('store state update', store.getState());
+});
+
 store.dispatch({ type: 'foo' });
 
 store.dispatch({
-    type: 'GENERATION_ACTION_TYPE',
+    type: GENERATION_ACTION_TYPE,
     generation: { generationId: 'goo', expiration: 'bar' }
+});
+
+var generationActionCreater = function generationActionCreater(payload) {
+    return {
+        type: GENERATION_ACTION_TYPE,
+        generation: payload
+    };
+};
+
+var zooAction = generationActionCreater({
+    generationId: 'zoo',
+    expiration: 'bars'
+});
+
+store.dispatch(zooAction);
+
+fetch('http://localhost:3000/generation').then(function (response) {
+    return response.json();
+}).then(function (json) {
+    store.dispatch(generationActionCreater(json.generation));
 });
 
 (0, _reactDom.render)(_react2.default.createElement(
@@ -39538,7 +39562,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '58465' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '52948' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
