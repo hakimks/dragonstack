@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "nf start",
-	"backend": "nodemon backend/bin/server",
-	"frontend" : "parcel frontend/src/index.html"
+    "backend": "nodemon backend/bin/server",
+    "frontend": "parcel frontend/src/index.html"
   },
   "repository": {
     "type": "git",
@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/hakimks/dragonstack/issues"
   },
-  "homepage": "https://github.com/hakimks/dragonstack#readme"
+  "homepage": "https://github.com/hakimks/dragonstack#readme",
+  "dependencies": {
+    "redux": "^4.0.0"
+  }
 }
