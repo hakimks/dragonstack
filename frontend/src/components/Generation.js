@@ -22,7 +22,7 @@ class Generation extends Component {
         fetch('http://localhost:3000/generation')
         .then(response => response.json())
         .then(json => {
-            console.log('json', json)
+            // console.log('json', json)
             this.setState({ generation: json.generation});
         }
         
